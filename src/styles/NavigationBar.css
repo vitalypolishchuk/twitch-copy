@@ -1,0 +1,48 @@
+.navigation-bar {
+  font-size: 2.5vw;
+  height: min(10vw, 50px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 850px) {
+  .navigation-bar {
+    font-size: 1rem;
+  }
+}
+.navigation-bar-center {
+  position: relative;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75%;
+  width: 98%;
+}
+.logo-and-browse-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: 2px solid red;
+  width: 20vw;
+  max-width: 150px;
+}
+.browse-text:hover {
+  color: var(--main-color);
+}
+.kswvAb {
+  fill: var(--main-color);
+}
+.dTDTur {
+  fill: var(--white);
+}
+.twitch-logo:hover {
+  cursor: pointer;
+}
+.twitch-logo:hover .kswvAb {
+  fill: var(--main-color-hover);
+}

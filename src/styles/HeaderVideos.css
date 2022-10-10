@@ -1,0 +1,43 @@
+.outer-container {
+  margin-top: 2rem;
+  position: relative;
+  outline: 2px solid green;
+  overflow-x: hidden;
+  margin-inline: auto;
+  width: 100%;
+}
+.header-videos-container {
+  position: relative;
+  height: 300px;
+  max-width: 750px;
+  margin-inline: auto;
+  outline: 2px solid red;
+  display: flex;
+}
+.inner-container {
+  outline: 2px solid blue;
+  text-align: center;
+}
+.header-videos-arrow {
+  position: absolute;
+  z-index: 2;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 20%;
+  background: rgb(246, 246, 246);
+  cursor: pointer;
+}
+.arrow-left {
+  top: 50%;
+  left: 25px;
+}
+.arrow-right {
+  top: 50%;
+  right: 25px;
+}
+.inner-container {
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s;
+  align-self: center;
+}

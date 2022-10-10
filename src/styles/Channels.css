@@ -1,0 +1,15 @@
+.channels {
+  position: sticky;
+  top: min(10vw, 50px);
+  height: calc(100vh - min(10vw, 50px) - min(12vw, 60px));
+  outline: 2px solid red;
+  width: min(10vw, 50px);
+  background-color: var(--main-background-color);
+}
+@media screen and (min-width: 1200px) {
+  .channels {
+    max-width: none;
+    width: 200px;
+    outline: 2px solid blue;
+  }
+}

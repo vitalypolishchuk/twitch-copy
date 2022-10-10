@@ -1,0 +1,40 @@
+.join-msg-container {
+  background: #5c16c5;
+  height: min(12vw, 60px);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.join-msg-center-container {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  outline: 2px solid red;
+  width: 90%;
+  margin-inline: auto;
+  justify-content: space-between;
+}
+.img-and-message {
+  display: flex;
+  gap: 1rem;
+  height: 80%;
+  align-items: center;
+}
+.join-msg-header {
+  color: white;
+}
+.additional-msg {
+  display: none;
+  text-indent: 1em;
+  font-weight: 100;
+}
+@media screen and (min-width: 1150px) {
+  .additional-msg {
+    display: inline-block;
+  }
+}
+.join-msg-btn {
+  background-color: white;
+}
+.join-msg-btn:hover {
+  background-color: var(--dark-white);
+}

@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
+  font-size: min(2.7vw, 1.3rem);
+}
+h4 {
+  font-size: min(2.5vw, 1.1rem);
+}
+h5 {
+  font-size: min(2vw, 0.7rem);
+}
+img {
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+link:active,
+link:visited {
+  color: black;
+  text-decoration: none;
+}
+.browser-link:focus,
+.browser-link:hover,
+.browser-link:visited,
+.browser-link:link,
+.browser-link:active {
+  text-decoration: none;
+  color: black;
+}
+.generic-category {
+  width: 90%;
+  margin-inline: auto;
+}
+.generic-split-line {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.none {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+.section-msg {
+  margin-bottom: 1.5vh;
+}
+.generic-btn {
+  border: none;
+  font-weight: bold;
+  padding: min(1.8vw, 0.4rem) min(2vw, 0.6rem);
+  font-size: min(1.8vw, 0.8rem);
+  border-radius: 5%;
+  cursor: pointer;
+}
+.generic-logo-div {
+  height: 100%;
+  width: min(7vw, 40px);
+  display: inline-block;
+}
+
+.channels-and-content {
+  outline: 2px solid pink;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

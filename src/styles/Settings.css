@@ -1,0 +1,88 @@
+.settings-logo {
+  display: flex;
+  height: min(7.5vw, 37.5px);
+}
+.profile-image {
+  cursor: pointer;
+}
+
+.settings-container {
+  outline: 2px solid pink;
+  position: absolute;
+  right: 0;
+  top: 120%;
+  width: min(35vw, 400px);
+  background: var(--white);
+  text-align: center;
+}
+.settings-profile-container {
+  cursor: pointer;
+  display: flex;
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  position: relative;
+}
+.settings-profile-info {
+  outline: 2px solid red;
+  width: 70%;
+  word-wrap: break-word;
+}
+.settings-profile-container:hover {
+  background: var(--dark-white);
+}
+.settings-profile-info {
+  text-align: left;
+}
+.settings-profile-image {
+  border-radius: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 15%;
+  padding: min(3vw, 20px) 0;
+}
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+.settings-list-item {
+  text-align: left;
+  background: none;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  margin-inline: auto;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+.settings-list-item h4 {
+  font-weight: 100;
+  padding: 1.5vw;
+}
+.settings-list-item:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+.settings-list-item:hover .settings-icons {
+  color: var(--white);
+}
+.settings-icons {
+  color: black;
+  font-size: min(4vw, 30px);
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+.logout {
+  background: var(--dark-white);
+  margin-right: min(2vw, 10px);
+  margin-bottom: min(3vw, 20px);
+}
+.logout:hover {
+  background: var(--dark-white-hover);
+}

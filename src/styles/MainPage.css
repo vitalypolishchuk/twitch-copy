@@ -1,0 +1,5 @@
+.channels-and-content {
+  outline: 2px solid pink;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
