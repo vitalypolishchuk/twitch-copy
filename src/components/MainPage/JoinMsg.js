@@ -12,6 +12,9 @@ class JoinMsg extends React.Component {
     if (this.props.isSignedIn) this.joinMsgContainer.current.classList.add("none");
     else if (!this.props.isSignedIn) this.joinMsgContainer.current.classList.remove("none");
   }
+  onSignUp() {
+    // add log in here
+  }
   render() {
     return (
       <div ref={this.joinMsgContainer} className="join-msg-container">
@@ -23,7 +26,9 @@ class JoinMsg extends React.Component {
               <span className="additional-msg">Discover the best Livestreams anywhere.</span>
             </h3>
           </div>
-          <button className="join-msg-btn generic-btn">Sign Up</button>
+          <button className="join-msg-btn generic-btn" onClick={this.onSignUp.bind(this)}>
+            Sign Up
+          </button>
         </div>
       </div>
     );

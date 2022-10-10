@@ -1,7 +1,7 @@
 .channels {
   position: sticky;
   top: min(10vw, 50px);
-  height: 100%;
+  height: inherit;
   outline: 2px solid red;
   width: min(10vw, 50px);
   background-color: var(--main-background-color);

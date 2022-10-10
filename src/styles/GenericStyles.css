@@ -67,7 +67,13 @@ link:visited {
 }
 
 .channels-and-content {
+  position: relative;
   outline: 2px solid pink;
   display: grid;
   grid-template-columns: auto 1fr;
+}
+.content {
+  background-color: #f7f7f8;
+  height: inherit;
+  overflow-y: scroll;
 }

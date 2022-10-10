@@ -2,5 +2,5 @@
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  /* height: 50px; */
+  height: 300px;
 }

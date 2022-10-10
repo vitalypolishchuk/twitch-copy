@@ -1,8 +1,0 @@
-.content {
-  background-color: #f7f7f8;
-  /* height of navigation bar goes with min of 5vw and 50px
-  height of join-msg goes with min of 8vw and 60px
-  */
-  height: calc(100vh - min(10vw, 50px) - min(12vw, 60px));
-  overflow-y: scroll;
-}
