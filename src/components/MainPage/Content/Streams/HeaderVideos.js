@@ -1,7 +1,7 @@
 import "../../../../styles/HeaderVideos.css";
 import React, { createRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import * as config from "../../../../config.js";
 

@@ -1,5 +1,6 @@
 .channels-and-content {
-  outline: 2px solid pink;
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
+  /* height: 50px; */
 }

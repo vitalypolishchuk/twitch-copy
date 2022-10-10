@@ -1,10 +1,20 @@
 import "../../styles/JoinMsg.css";
 import React from "react";
+import { connect } from "react-redux";
+import { signIn } from "../../actions";
 
 class JoinMsg extends React.Component {
+  constructor(props) {
+    super(props);
+    this.joinMsgContainer = React.createRef();
+  }
+  componentDidUpdate() {
+    if (this.props.isSignedIn) this.joinMsgContainer.current.classList.add("none");
+    else if (!this.props.isSignedIn) this.joinMsgContainer.current.classList.remove("none");
+  }
   render() {
     return (
-      <div className="join-msg-container">
+      <div ref={this.joinMsgContainer} className="join-msg-container">
         <div className="join-msg-center-container">
           <div className="img-and-message">
             <img alt="twitch logo" className="join-msg-img" src="https://static.twitchcdn.net/assets/coolcat-edacb6fbd813ce2f0272.png" />
@@ -20,4 +30,8 @@ class JoinMsg extends React.Component {
   }
 }
 
-export default JoinMsg;
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps, { signIn })(JoinMsg);

@@ -1,5 +1,6 @@
 import "../../styles/MainPage.css";
 import React from "react";
+import { connect } from "react-redux";
 
 import NavigationBar from "./NavigationBar";
 import Channels from "./Channels";
@@ -21,4 +22,8 @@ class MainPage extends React.Component {
   }
 }
 
-export default MainPage;
+const mapStateToProps = function (state) {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps)(MainPage);

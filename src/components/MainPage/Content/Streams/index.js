@@ -3,7 +3,6 @@ import React from "react";
 
 import HeaderVideos from "./HeaderVideos";
 import LiveCategory from "./LiveCategory";
-import LiveStreams from "./LiveStreams";
 
 class Content extends React.Component {
   render() {

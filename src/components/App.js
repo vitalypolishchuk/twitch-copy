@@ -11,24 +11,6 @@ import StreamDelete from "./MainPage/Content/StreamDelete";
 import StreamEdit from "./MainPage/Content/StreamEdit";
 import JoinMsg from "./MainPage/JoinMsg";
 
-const PageOne = () => {
-  return (
-    <div>
-      PageOne
-      <Link to="/pagetwo">Navigate to Page Two</Link>
-    </div>
-  );
-};
-
-const PageTwo = () => {
-  return (
-    <div>
-      PageTwo
-      <Link to="/">Navigate to Main Page</Link>
-    </div>
-  );
-};
-
 const App = () => {
   return (
     <div>
