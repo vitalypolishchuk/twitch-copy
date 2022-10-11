@@ -62,10 +62,10 @@ class GoogleAuth extends React.Component {
     } else {
       return (
         <div>
-          <button onClick={this.onSignInClick.bind(this)} className="login generic-btn">
+          <button onClick={this.onSignInClick.bind(this)} className="login dark-white-btn generic-btn">
             Log In
           </button>
-          <button onClick={this.onSignInClick.bind(this)} className="signup generic-btn">
+          <button onClick={this.onSignInClick.bind(this)} className="main-color-btn generic-btn">
             Sign Up
           </button>
         </div>

@@ -32,7 +32,7 @@ class App extends React.Component {
             <Channels />
             <div className="content">
               <Route path="/" exact component={Streams} />
-              <Route path="/streams/new" exact component={NewStream} />
+              <Route path="/streams/create" exact component={NewStream} />
               <Route path="/streams/edit" exact component={StreamEdit} />
               <Route path="/streams/delete" exact component={StreamDelete} />
             </div>

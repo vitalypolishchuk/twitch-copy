@@ -2,13 +2,3 @@
   background: var(--dark-white);
   margin-right: min(2vw, 10px);
 }
-.login:hover {
-  background: var(--dark-white-hover);
-}
-.signup {
-  color: var(--white);
-  background: var(--main-color);
-}
-.signup:hover {
-  background: var(--main-color-hover);
-}
