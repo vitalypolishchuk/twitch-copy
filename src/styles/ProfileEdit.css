@@ -1,0 +1,170 @@
+.edit-profile-outer-container {
+  width: 80%;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-top: min(3vw, 2rem);
+}
+.edit-profile-subtitle {
+  font-size: min(2.3vw, 0.9rem);
+  margin-bottom: min(20px, 3vw);
+}
+.edit-profile-settings-container {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: min(0.5rem, 1.3vw) 0;
+}
+.edit-profile-generic-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.edit-profile-username-title {
+  margin-top: min(5.3vw, 22px);
+  font-size: min(2.3vw, 0.9rem);
+}
+.edit-profile-bio-container {
+  height: min(10rem, 30vw);
+  border-bottom: none;
+}
+.edit-profile-username-outer-container {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom: none;
+}
+.edit-profile-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.edit-profile-btn-outer-container {
+  height: min(3rem, 9vw);
+  margin-bottom: min(3vw, 2rem);
+}
+.edit-profile-main-title {
+  margin-bottom: min(1vw, 0.5rem);
+}
+.edit-profile-display-msg-link {
+  transition: 0.3s all;
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--main-color);
+  border-radius: 0.25rem;
+  height: min(2.5rem, 7.5vw);
+  width: min(20rem, 50vw);
+}
+.edit-profile-display-msg-link-inner-container {
+  width: 90%;
+  margin: auto;
+  height: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.edit-profile-display-msg-link-text {
+  color: var(--white);
+  font-size: min(2.15vw, 0.85rem);
+  display: inline-block;
+}
+.edit-profile-display-msg-link-icon {
+  color: var(--white);
+  margin-right: min(1.5vw, 10px);
+  font-size: min(3vw, 17px);
+}
+.edit-profile-social-links-container {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: min(5.3vw, 22px);
+}
+.edit-social-links-inner-container {
+  height: min(4.5rem, 15vw);
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  border-radius: 0.25rem;
+  margin-bottom: min(1rem, 3vw);
+}
+.edit-social-links-info-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+.edit-social-link-icon-container {
+  width: min(30px, 5vw);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-white);
+  cursor: move;
+  transition: 0.3s all;
+}
+.edit-social-link-icon {
+  font-size: min(1rem, 3vw);
+  color: black;
+}
+.edit-social-link-icon-container:hover {
+  background-color: var(--main-color-hover);
+}
+.edit-social-link-icon-container:hover .edit-social-link-icon {
+  color: var(--white);
+}
+.edit-social-link-img-container {
+  margin: 0 min(1.5rem, 4.5vw);
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+.edit-social-link-img {
+  height: min(15px, 3.2vw);
+}
+.edit-social-links-name {
+  font-size: min(2.2vw, 0.9rem);
+  color: rgb(34, 34, 34);
+}
+.edit-social-links-url {
+  color: rgb(47, 47, 47);
+}
+.edit-social-links-edit-delete-container {
+  height: inherit;
+  width: min(60px, 10vw);
+  margin-right: min(30px, 5vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit-social-link-icon-delete-btn,
+.edit-social-link-icon-edit-btn {
+  cursor: pointer;
+  padding: min(7px, 1vw);
+}
+.edit-social-link-icon-edit-btn:hover,
+.edit-social-link-icon-delete-btn:hover {
+  color: var(--main-color-hover);
+}
+.edit-social-links-info-edit-container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  height: inherit;
+}
+.edit-social-link-form-inner {
+  height: inherit;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+}
+.edit-social-link-form {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.edit-social-link-save-cancel-btns {
+  width: min(120px, 20vw);
+  margin-left: min(1rem, 1.5vw);
+  display: flex;
+  justify-content: space-between;
+}

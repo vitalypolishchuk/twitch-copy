@@ -43,10 +43,3 @@
   outline: none;
   border: none;
 }
-.error-container {
-  outline: 2px solid red;
-  position: absolute;
-  top: 90%;
-  left: 0;
-  transform: translateY(-50%);
-}

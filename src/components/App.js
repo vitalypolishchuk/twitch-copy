@@ -3,6 +3,7 @@ import "../styles/GenericStyles.css";
 import React from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import { fetchProfiles } from "../actions";
 
 import NavigationBar from "./MainPage/NavigationBar";
 import Channels from "./MainPage/Channels";
@@ -11,10 +12,27 @@ import NewStream from "./MainPage/Content/NewStream";
 import StreamDelete from "./MainPage/Content/StreamDelete";
 import StreamEdit from "./MainPage/Content/StreamEdit";
 import JoinMsg from "./MainPage/JoinMsg";
+import UserProfile from "./MainPage/Content/UserProfile/ProfilePage";
+import ProfileEdit from "./MainPage/Content/UserProfile/ProfileEdit";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount() {
+    this.props.fetchProfiles();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.profiles.anyProfile.length !== this.props.profiles.anyProfile.length) {
+      this.props.fetchProfiles();
+    }
+  }
+  renderProfiles() {
+    if (this.props.profiles.anyProfile.length === undefined) return <div></div>;
+
+    return this.props.profiles.anyProfile.map((profile, index) => {
+      return <Route path={`/${profile.id}`} key={index} exact component={UserProfile} />;
+    });
   }
   render() {
     return (
@@ -35,6 +53,8 @@ class App extends React.Component {
               <Route path="/streams/create" exact component={NewStream} />
               <Route path="/streams/edit" exact component={StreamEdit} />
               <Route path="/streams/delete" exact component={StreamDelete} />
+              {this.renderProfiles.call(this)}
+              <Route path="/profile/edit" exact component={ProfileEdit} />
             </div>
           </div>
           <JoinMsg />
@@ -45,7 +65,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = function (state) {
-  return { isSignedIn: state.auth.isSignedIn };
+  return { isSignedIn: state.auth.isSignedIn, profiles: state.profiles };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { fetchProfiles })(App);

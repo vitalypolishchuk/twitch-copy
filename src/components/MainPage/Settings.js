@@ -41,6 +41,7 @@ class Settings extends React.Component {
     this.settingsContainer.current.classList.toggle("hidden");
   }
   render() {
+    console.log(this.props.myProfile);
     return (
       <div className={`${this.props.isSignedIn ? "" : "none"}`}>
         <div className="settings-logo">
@@ -54,7 +55,7 @@ class Settings extends React.Component {
           </div>
         </div>
         <div ref={this.settingsContainer} className="settings-container hidden">
-          <Link to="/" className="browser-link" onClick={this.handleClickToCloseSettings.bind(this)}>
+          <Link to={`/${this.props.myProfile.id}`} className="browser-link" onClick={this.handleClickToCloseSettings.bind(this)}>
             <div ref={this.settingsProfileContainer} className="settings-profile-container">
               <img
                 className="settings-profile-image"
@@ -62,8 +63,8 @@ class Settings extends React.Component {
                 alt="Profile"
               />
               <div className="settings-profile-info">
-                <h4 className="settings-profile-name">{this.props.userData?.userName ? this.props.userData?.userName : ""}</h4>
-                <h5 className="settings-profile-email">{this.props.userData?.userEmail ? this.props.userData?.userEmail : ""}</h5>
+                <h4 className="settings-profile-name">{this.props.myProfile.userData?.userName ? this.props.myProfile.userData?.userName : ""}</h4>
+                <h5 className="settings-profile-email">{this.props.myProfile.userData?.userEmail ? this.props.myProfile.userData?.userEmail : ""}</h5>
               </div>
             </div>
           </Link>
@@ -91,7 +92,7 @@ class Settings extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { isSignedIn: state.auth.isSignedIn, userData: state.auth.userData };
+  return { isSignedIn: state.auth.isSignedIn, userData: state.auth.userData, myProfile: state.profiles.myProfile };
 };
 
 export default connect(mapStateToProps, { signOut })(Settings);

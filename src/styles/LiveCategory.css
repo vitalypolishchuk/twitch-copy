@@ -12,7 +12,28 @@
 }
 .live-element {
   outline: 2px solid blue;
-  height: min(45vw, 300px);
+  height: 40vw;
+}
+.live-element-inner-container {
+  height: inherit;
+  display: grid;
+  grid-template-rows: 60% 40%;
+}
+@media screen and (min-width: 887px) {
+  .live-element {
+    height: 25vw;
+  }
+}
+@media screen and (min-width: 1167px) {
+  .live-element {
+    height: 20vw;
+  }
+}
+
+@media screen and (min-width: 1317px) {
+  .live-element {
+    height: 16vw;
+  }
 }
 .display-elements-btn {
   position: absolute;
@@ -33,4 +54,46 @@
 .show-more,
 .show-less {
   font-size: min(2.7vw, 0.8rem);
+}
+.live-thumbnail {
+  cursor: pointer;
+  width: 100%;
+  object-fit: cover;
+}
+.live-element-info-container {
+  outline: 2px solid yellow;
+  height: 100%;
+}
+.live-element-channel_img-name {
+  outline: 2px solid red;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.live-element-profile-image {
+  cursor: pointer;
+  border-radius: 50%;
+  width: min(40px, 6vw);
+  margin-right: 1vw;
+}
+.live-element-title {
+  font-size: min(2.2vw, 0.9rem);
+  cursor: pointer;
+  color: rgb(18, 18, 18);
+}
+.live-element-profile-name {
+  cursor: pointer;
+  color: gray;
+  font-weight: 100;
+  font-size: min(2.2vw, 0.8rem);
+}
+.live-element-img-link {
+  align-self: flex-start;
+}
+.live-element-profile-info {
+  display: grid;
+}
+.live-element-link-profile-name {
+  width: fit-content;
+  display: flex;
+  text-decoration: none;
 }

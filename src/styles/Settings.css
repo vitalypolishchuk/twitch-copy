@@ -4,6 +4,7 @@
 }
 .profile-image {
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .settings-container {

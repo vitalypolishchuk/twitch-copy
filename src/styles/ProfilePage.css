@@ -1,0 +1,202 @@
+.user-profile-main-container {
+  width: 90%;
+  margin-inline: auto;
+}
+.user-profile-info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vw;
+  align-items: center;
+  outline: 2px solid red;
+  margin-bottom: min(20px, 3vw);
+}
+.user-profile-logo-profile-name {
+  display: flex;
+  align-items: center;
+}
+.user-profile-follow-btn {
+  border-radius: 0.3rem;
+}
+.user-profile-image {
+  border-radius: 50%;
+  width: min(10vw, 70px);
+  margin-right: 3vw;
+}
+.user-profile-verified {
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: white;
+  font-size: min(2vw, 15px);
+  margin-top: 0.5vw;
+  margin-left: 0.8vw;
+}
+.user-profile-name {
+  display: flex;
+}
+.user-profile-followers {
+  font-size: min(2.2vw, 0.9rem);
+  font-weight: 100;
+  color: rgb(72, 72, 72);
+}
+.user-profile-edit-channel {
+  outline: 2px solid red;
+  background-color: var(--white);
+  margin-bottom: min(20px, 3vw);
+}
+.user-profile-edit-channel-center {
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-profile-edit-new {
+  background-color: var(--main-color);
+  color: var(--white);
+  font-size: min(1.5vw, 0.6rem);
+  padding: 0 min(1.2vw, 10px);
+  border-radius: 1rem;
+}
+.user-profile-edit-text {
+  font-weight: bold;
+  font-size: min(2.7vw, 1.3rem);
+}
+.user-profile-edit-text-2 {
+  font-size: min(2vw, 0.85rem);
+}
+.user-profile-edit-btn {
+  padding: 0.5vw 0.9vw;
+}
+.user-profile-texts {
+  margin-right: 1vw;
+  line-height: 2vw;
+}
+.user-profile-bio-container {
+  outline: 2px solid red;
+  background-color: var(--white);
+  margin-bottom: min(40px, 6vw);
+}
+.user-profile-bio-container-center {
+  width: 90%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  gap: min(70px, 10vw);
+}
+.user-profile-bio-about-container {
+  outline: 2px solid green;
+}
+.user-profile-bio-about-header {
+  padding: min(30px, 5vw) 0;
+}
+.user-profile-bio-about-text {
+  font-size: min(2vw, 0.9rem);
+  padding-bottom: min(30px, 5vw);
+}
+.user-profile-bio-links-container {
+  outline: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.user-profile-link-center {
+  outline: 1px solid blue;
+  display: flex;
+  align-items: center;
+  margin: min(5px, 0.75vw) 0;
+  width: fit-content;
+  cursor: pointer;
+}
+.user-profile-link-img {
+  display: inline-block;
+  width: min(2vw, 15px);
+  margin-right: min(1.5vw, 10px);
+}
+.user-profile-link-name {
+  display: inline;
+}
+.user-profile-video {
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left 0.3s;
+}
+.user-profile-videos-outer-container {
+  position: relative;
+  height: 40vw;
+  outline: 2px solid red;
+  /* change margin-botton */
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 600px) {
+  .user-profile-videos-outer-container {
+    height: 25vw;
+  }
+}
+@media screen and (min-width: 900px) {
+  .user-profile-videos-outer-container {
+    height: 20vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .user-profile-videos-outer-container {
+    height: 16vw;
+  }
+}
+
+.user-profile-videos-container {
+  height: inherit;
+  position: relative;
+  overflow: hidden;
+  /* outline: 2px solid blue; */
+}
+.user-profile-videos-arrow {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  background: white;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  padding: min(2vw, 10px) min(3vw, 15px);
+  font-size: min(1.5vw, 15px);
+  color: var(--main-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.user-profile-videos-arrow:hover {
+  font-size: min(1.7vw, 17px);
+  padding: min(2.5vw, 13px) min(3vw, 15px);
+}
+.user-profile-videos-arrow-left {
+  left: 0;
+}
+.user-profile-videos-arrow-right {
+  right: 0;
+}
+.user-stream-element-title {
+  font-size: min(2vw, 11px);
+}
+.user-profile-recent-broadcast-title {
+  margin-bottom: min(1.5vw, 10px);
+}
+.user-profile-no-videos-title-container {
+  max-width: 600px;
+  margin-inline: auto;
+  text-align: center;
+  letter-spacing: min(0.15vw, 1.6px);
+}
+.user-profile-no-videos-title {
+  font-size: min(2.1vw, 0.9rem);
+  margin-bottom: min(10px, 1.8vw);
+}
+.user-profile-no-videos-subtitle {
+  font-size: min(2vw, 0.8rem);
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: min(5px, 0.6vw);
+}
+.user-profile-bio-about-text-none {
+  font-size: min(2.2vw, 1rem);
+}

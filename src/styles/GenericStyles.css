@@ -6,6 +6,9 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+h2 {
+  font-size: min(3vw, 1.8rem);
+}
 h3 {
   font-size: min(2.7vw, 1.3rem);
 }

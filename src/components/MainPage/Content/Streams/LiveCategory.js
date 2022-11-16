@@ -1,5 +1,8 @@
 import "../../../../styles/LiveCategory.css";
 import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchAnyProfile } from "../../../../actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -10,18 +13,23 @@ class LiveCategory extends React.Component {
     this.liveCategoryContainer = React.createRef();
     this.showMore = React.createRef();
     this.showLess = React.createRef();
-    this.singleElementContainer = React.createRef();
 
-    this.state = { icon: "down", showMoreClicked: 0 };
+    this.state = { icon: "down", showMoreClicked: 0, renderContent: true };
   }
   componentDidMount() {
-    this.showMoreOrLessElements();
+    // this.getChannelsInfo.call(this);
+    // this.showMoreOrLessElements();
     window.addEventListener("resize", this.showMoreOrLessElements.bind(this));
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.showMoreClicked !== this.state.showMoreClicked) {
-      this.showMoreOrLessElements();
+    this.showMoreOrLessElements();
+    if (Object.keys(prevProps.content).length !== Object.keys(this.props.content).length) {
+      this.getChannelsInfo.call(this);
     }
+  }
+  reduceTitle(str) {
+    if (str.length > 53) str = str.substring(0, 50) + "...";
+    return str;
   }
   showMoreOrLessElements() {
     const elementsContainerChildren = this.liveCategoryContainer.current.children.length;
@@ -56,23 +64,66 @@ class LiveCategory extends React.Component {
       this.showLess.current.classList.remove("none");
     }
   }
+  async getChannelsInfo() {
+    const selectedIds = {};
+    const ids = this.props.content.map((item) => {
+      return item.userId;
+    });
+    ids.filter((id) => {
+      if (id !== selectedIds.userId) {
+        selectedIds[`${id}`] = id;
+        return id;
+      }
+    });
+    const selectedIdsArray = Object.keys(selectedIds);
+    this.props.fetchAnyProfile(selectedIdsArray);
+  }
+  getChannelInfo(id) {
+    if (Array.isArray(this.props.profileInfo)) {
+      return this.props.profileInfo.find((profile) => {
+        return id === profile.id;
+      });
+    }
+  }
+  renderList() {
+    return this.props.content.map((item) => {
+      const profileInfo = this.getChannelInfo.call(this, item.userId);
+      const titleReduced = this.reduceTitle.call(this, item.title);
+      return (
+        <div className="live-element" key={item.id}>
+          <div className="live-element-inner-container">
+            <div className="live-thumbnail-container">
+              <img className="live-thumbnail" src={item.thumbnail} />
+            </div>
+            <div className="live-element-info-container">
+              <div className="live-element-channel_img-name">
+                <Link to={`/${item.userId}`} className="live-element-img-link">
+                  <img
+                    className="live-element-profile-image"
+                    src={`${profileInfo?.userData.userImageUrl ?? "https://imgur.com/a/iAYBNnL"}`}
+                    alt="Profile"
+                  />
+                </Link>
+                <div className="live-element-profile-info">
+                  <h4 className="live-element-title">{titleReduced}</h4>
+                  <Link to={`/${item.userId}`} className="live-element-link-profile-name">
+                    <h5 className="live-element-profile-name">{`${profileInfo?.userData.userName ?? "waiting"}`}</h5>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  }
 
   render() {
     return (
       <div className="generic-category live-elements-category-container">
         <h3 className="section-msg">{this.props.categoryHeader}</h3>
         <div ref={this.liveCategoryContainer} className="live-elements-container">
-          <div ref={this.singleElementContainer} className="live-element"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
-          <div className="live-element none"></div>
+          {this.renderList.call(this)}
         </div>
         <div className="generic-split-line">
           <button
@@ -95,4 +146,8 @@ class LiveCategory extends React.Component {
   }
 }
 
-export default LiveCategory;
+const mapStateToProps = (state) => {
+  return { profileInfo: state.profiles.anyProfile };
+};
+
+export default connect(mapStateToProps, { fetchAnyProfile })(LiveCategory);
