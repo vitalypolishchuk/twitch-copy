@@ -2,7 +2,6 @@
   background: var(--white);
   width: 70%;
   margin: min(5vw, 30px) auto;
-  outline: 2px solid blue;
 }
 .new-stream-center {
   padding: min(3vw, 2rem) 0;

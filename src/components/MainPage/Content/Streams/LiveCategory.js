@@ -92,9 +92,9 @@ class LiveCategory extends React.Component {
       return (
         <div className="live-element" key={item.id}>
           <div className="live-element-inner-container">
-            <div className="live-thumbnail-container">
+            <Link to={`streams/${item.id}`} className="live-thumbnail-container">
               <img className="live-thumbnail" src={item.thumbnail} />
-            </div>
+            </Link>
             <div className="live-element-info-container">
               <div className="live-element-channel_img-name">
                 <Link to={`/${item.userId}`} className="live-element-img-link">

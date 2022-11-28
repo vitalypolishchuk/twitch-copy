@@ -2,7 +2,8 @@ import "../../../../styles/NewStream.css";
 import React from "react";
 import { Field, formValues, formValueSelector, reduxForm } from "redux-form";
 import { connect } from "react-redux";
-import { createStream } from "../../../../actions";
+import _ from "lodash";
+import { createStream, fetchStreams } from "../../../../actions";
 
 const getCurrentDate = function () {
   const curDate = new Date();
@@ -112,13 +113,17 @@ const setThumbnail = function (formValues) {
 };
 
 class CreateStream extends React.Component {
-  onSubmit(formValues) {
+  async onSubmit(formValues) {
     formValues.userId = this.props.profile.myProfile.id;
     // formValues.date = getCurrentDate();
     setThumbnail(formValues);
     formValues.date = getCurrentDate();
     formValues.likes = 0;
-    this.props.createStream(formValues);
+    await this.props.createStream(formValues);
+    await this.props.fetchStreams();
+    const streams = Object.values(this.props.streams.allStreams);
+    const streamId = streams.findIndex((stream) => stream.title === formValues.title);
+    window.open(streamId + 2);
   }
   render() {
     return (
@@ -161,7 +166,7 @@ const validate = (formValues) => {
 const formWrapped = reduxForm({ form: "streamCreate", validate: validate })(CreateStream);
 
 const mapStateToProps = function (state) {
-  return { profile: state.profiles };
+  return { profile: state.profiles, streams: state.streams };
 };
 
-export default connect(mapStateToProps, { createStream })(formWrapped);
+export default connect(mapStateToProps, { createStream, fetchStreams })(formWrapped);

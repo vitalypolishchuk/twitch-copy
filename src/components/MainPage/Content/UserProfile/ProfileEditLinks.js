@@ -37,7 +37,6 @@ class ProfileEditLinks extends React.Component {
     }
   }
   editSocialLinkInput(formProps) {
-    console.log(formProps);
     return (
       <input
         autoComplete="off"

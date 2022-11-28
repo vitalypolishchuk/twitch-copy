@@ -27,7 +27,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  outline: 2px solid red;
   width: 20vw;
   max-width: 150px;
 }

@@ -29,7 +29,6 @@
   position: relative;
 }
 .settings-profile-info {
-  outline: 2px solid red;
   width: 70%;
   word-wrap: break-word;
 }

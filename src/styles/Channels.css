@@ -2,14 +2,123 @@
   position: sticky;
   top: min(10vw, 50px);
   height: inherit;
-  outline: 2px solid red;
+  overflow-y: visible;
+  overflow-x: hidden;
   width: min(10vw, 50px);
   background-color: var(--main-background-color);
+}
+@media screen and (max-height: 700px) {
+  .channels {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
 @media screen and (min-width: 1200px) {
   .channels {
     max-width: none;
     width: 200px;
-    outline: 2px solid blue;
   }
+}
+.channels-container {
+  margin-top: min(2vw, 10px);
+}
+.channels-inner-container {
+  width: 70%;
+  margin-inline: auto;
+  margin-bottom: min(2vw, 10px);
+}
+.channels-img {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 50%;
+}
+.channels-outer-container {
+  width: 90%;
+  margin-inline: auto;
+}
+.popular-channels-text {
+  font-size: min(2.1vw, 0.8rem);
+  letter-spacing: min(0.3px, 0.3vw);
+  margin-bottom: 1rem;
+}
+.channels-inner-container-2 {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  margin-bottom: 0.6rem;
+}
+.channels-img-2 {
+  width: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.channels-name-bio {
+  width: 135px;
+  display: grid;
+  align-items: center;
+  overflow-x: hidden;
+}
+.channels-name {
+  font-size: min(2.1vw, 0.8rem);
+  letter-spacing: 0.5px;
+}
+.channels-bio {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: min(2.1vw, 0.8rem);
+  font-weight: 100;
+}
+.popular-channels-follow-favorites {
+  transition: 0.2s all;
+  border-radius: 0.35rem;
+  background: var(--white);
+}
+.popular-channels-follow-favorites-inner {
+  width: 80%;
+  margin-inline: auto;
+  position: relative;
+  height: 150px;
+}
+.popular-channels-icon {
+  font-size: 4rem;
+  color: var(--main-color-hover);
+  transition: 0.2s all;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+.popular-channels-icon-2 {
+  font-size: 3rem;
+  transition: 0.2s all;
+  color: rgb(29, 0, 103);
+  position: absolute;
+  top: 35%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+.popular-channels-follow-favorites-text {
+  position: absolute;
+  transition: 0.2s all;
+  top: 55%;
+  left: 0px;
+  letter-spacing: 0.5px;
+}
+.popular-channels-follow-favorites:hover {
+  background-color: var(--main-color-hover);
+}
+.popular-channels-follow-favorites:hover .popular-channels-icon {
+  color: white;
+}
+.popular-channels-follow-favorites:hover .popular-channels-follow-favorites-text {
+  color: white;
+}
+.popular-channels-follow-favorites-outer {
+  position: absolute;
+  top: 550px;
+  left: 4.5%;
+  transform: translateY(-50%);
+  height: 100px;
+  width: inherit;
+  background-color: white;
 }

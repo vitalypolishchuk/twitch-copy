@@ -1,22 +1,30 @@
 .outer-container {
   margin-top: 2rem;
   position: relative;
-  outline: 2px solid green;
   overflow-x: hidden;
   margin-inline: auto;
   width: 100%;
 }
 .header-videos-container {
   position: relative;
-  height: 300px;
+  height: min(300px, 30vw);
   max-width: 750px;
   margin-inline: auto;
-  outline: 2px solid red;
   display: flex;
 }
 .inner-container {
-  outline: 2px solid blue;
-  text-align: center;
+  height: inherit;
+  overflow-y: hidden;
+}
+.inner-container-video-player {
+  outline: 2px solid yellow;
+}
+.inner-container-video-player-img {
+  width: 100%;
+  width: 100%;
+}
+.inner-container-channel-info {
+  background-color: white;
 }
 .header-videos-arrow {
   position: absolute;

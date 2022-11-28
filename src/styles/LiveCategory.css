@@ -8,10 +8,8 @@
   row-gap: 10px;
   justify-content: space-between;
   overflow-y: hidden;
-  outline: 2px solid red;
 }
 .live-element {
-  outline: 2px solid blue;
   height: 40vw;
 }
 .live-element-inner-container {
@@ -61,11 +59,9 @@
   object-fit: cover;
 }
 .live-element-info-container {
-  outline: 2px solid yellow;
   height: 100%;
 }
 .live-element-channel_img-name {
-  outline: 2px solid red;
   display: grid;
   grid-template-columns: auto 1fr;
 }

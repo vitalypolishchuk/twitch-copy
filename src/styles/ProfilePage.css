@@ -7,7 +7,6 @@
   justify-content: space-between;
   margin-top: 3vw;
   align-items: center;
-  outline: 2px solid red;
   margin-bottom: min(20px, 3vw);
 }
 .user-profile-logo-profile-name {
@@ -39,7 +38,6 @@
   color: rgb(72, 72, 72);
 }
 .user-profile-edit-channel {
-  outline: 2px solid red;
   background-color: var(--white);
   margin-bottom: min(20px, 3vw);
 }
@@ -72,7 +70,6 @@
   line-height: 2vw;
 }
 .user-profile-bio-container {
-  outline: 2px solid red;
   background-color: var(--white);
   margin-bottom: min(40px, 6vw);
 }
@@ -83,9 +80,6 @@
   grid-template-columns: 3.5fr 1fr;
   gap: min(70px, 10vw);
 }
-.user-profile-bio-about-container {
-  outline: 2px solid green;
-}
 .user-profile-bio-about-header {
   padding: min(30px, 5vw) 0;
 }
@@ -94,14 +88,12 @@
   padding-bottom: min(30px, 5vw);
 }
 .user-profile-bio-links-container {
-  outline: 2px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
 .user-profile-link-center {
-  outline: 1px solid blue;
   display: flex;
   align-items: center;
   margin: min(5px, 0.75vw) 0;
@@ -126,7 +118,6 @@
 .user-profile-videos-outer-container {
   position: relative;
   height: 40vw;
-  outline: 2px solid red;
   /* change margin-botton */
   margin-bottom: 2rem;
 }

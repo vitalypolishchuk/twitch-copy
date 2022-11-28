@@ -113,7 +113,6 @@ class Profile extends React.Component {
   async onFollowClick() {
     if (this.state.following) {
       const indexOfFollower = this.props.profile.oneProfile.userData.followers.indexOf(this.props.profile.myProfile.id);
-      console.log(indexOfFollower);
       if (indexOfFollower > -1) {
         // only splice array when item is found
         this.props.profile.oneProfile.userData.followers.splice(indexOfFollower, 1); // 2nd parameter means remove one item only
@@ -421,9 +420,9 @@ class Profile extends React.Component {
       return (
         <div className="user-profile-video" key={stream.id}>
           <div className="live-element-inner-container">
-            <div className="live-thumbnail-container">
-              <img className="live-thumbnail" src={stream.thumbnail} alt="profile" />
-            </div>
+            <Link to={`streams/${stream.id}`} className="live-thumbnail-container">
+              <img className="live-thumbnail" src={stream.thumbnail} />
+            </Link>
             <div className="live-element-info-container">
               <div className="live-element-channel_img-name">
                 <Link to={`/${stream.userId}`} className="live-element-img-link">

@@ -77,7 +77,6 @@ export const editMyProfile = (id, editedProfile) => async (dispatch) => {
 };
 
 export const editProfile = async (id, editedProfile) => {
-  console.log("editing");
   await data.put(`/profiles/${id}`, editedProfile);
 };
 

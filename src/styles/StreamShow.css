@@ -1,0 +1,7 @@
+.show-stream-container {
+  outline: 2px solid blue;
+}
+.show-stream-video-player {
+  width: 100%;
+  height: min(80vh, 60vw);
+}

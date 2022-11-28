@@ -2,7 +2,7 @@ import "../styles/EnvironmentVars.css";
 import "../styles/GenericStyles.css";
 import React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import { fetchProfiles } from "../actions";
 
 import NavigationBar from "./MainPage/NavigationBar";
@@ -14,6 +14,7 @@ import StreamEdit from "./MainPage/Content/StreamEdit";
 import JoinMsg from "./MainPage/JoinMsg";
 import UserProfile from "./MainPage/Content/UserProfile/ProfilePage";
 import ProfileEdit from "./MainPage/Content/UserProfile/ProfileEdit";
+import StreamShow from "./MainPage/Content/StreamShow";
 
 class App extends React.Component {
   constructor(props) {
@@ -49,12 +50,15 @@ class App extends React.Component {
           >
             <Channels />
             <div className="content">
-              <Route path="/" exact component={Streams} />
-              <Route path="/streams/create" exact component={NewStream} />
-              <Route path="/streams/edit" exact component={StreamEdit} />
-              <Route path="/streams/delete" exact component={StreamDelete} />
-              {this.renderProfiles.call(this)}
-              <Route path="/profile/edit" exact component={ProfileEdit} />
+              <Switch>
+                <Route path="/" exact component={Streams} />
+                <Route path="/streams/create" exact component={NewStream} />
+                <Route path="/streams/edit" exact component={StreamEdit} />
+                <Route path="/streams/delete" exact component={StreamDelete} />
+                {this.renderProfiles.call(this)}
+                <Route path="/streams/:id" exact component={StreamShow} />
+                <Route path="/profile/edit" exact component={ProfileEdit} />
+              </Switch>
             </div>
           </div>
           <JoinMsg />

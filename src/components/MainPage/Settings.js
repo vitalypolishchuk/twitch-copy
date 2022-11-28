@@ -41,7 +41,6 @@ class Settings extends React.Component {
     this.settingsContainer.current.classList.toggle("hidden");
   }
   render() {
-    console.log(this.props.myProfile);
     return (
       <div className={`${this.props.isSignedIn ? "" : "none"}`}>
         <div className="settings-logo">
